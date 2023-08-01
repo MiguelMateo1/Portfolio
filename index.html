@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miguel Mateo</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="page">
+
+        <nav class="main-nav" >
+
+            <div class="nav-icon">
+            </div>
+
+            <div class="page-toggle">
+                <div class="toggle-btn">
+                <button id="workBtn" class="work active">Sites</button>
+                <button id="playBtn" class="play">Design</button>
+                <div class="toggle-slider"></div>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <div class="menu-btn">
+                    <div class="line-container">
+                        <div class="line line1"></div>
+                        <div class="line line2"></div>
+                        <div class="line line3"></div>
+                    </div>
+                </div>
+                <ul class="nav-ul">
+                    <li><a href="#projects" class="nav-link"><i class="fa-solid fa-display"></i>My work</a></li>
+                    <li><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i>Skills</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fa-regular fa-address-card"></i>Contact</a></li>
+                </ul>
+            </div>
+
+        </nav>
+
+        <!-- back to top btn -->
+        <a href="#" class="topBtn">
+            <i class="fa-solid fa-angle-up"></i>
+        </a>
+        
+        <main id="main">
+
+            <div id="workPage" class="page-content">
+                <section class="intro">
+                    <h1>Hi, I'm Miguel</h1>
+                    <h5><i class="fa-solid fa-map-pin"></i>New Jersey/ New York</h5>
+                    <p>Full Stack Web Developer, I am driven by creating elegant and
+                       dynamic web applications and bringing ideas to life.
+                    </p>
+                </section>
+            </div>
+
+            <div id="playPage" class="page-content" style="display: none;">
+                <section class="intro-2">
+                    <h1>Hi, I'm Miguel</h1>
+                    <h5><i class="fa-solid fa-map-pin"></i>New Jersey/ New York</h5>
+                    <p></p>
+                </section>
+            </div>
+        </main>
+
+        <!-- projects section -->
+        <section id="projects">
+            <!-- project 1 -->
+            <article class="project-container">
+                <div class="project-info">
+                    <div class="logo">
+                        <img class="img" src="images/project/logo/ultra-logo.png">
+                    </div>
+                    <h2 class="title">Ultra Plan</h2>
+                    <ul class="tags">
+                        <li>react.js</li>
+                        <li>node.js</li>
+                        <li>express</li>
+                        <li>mySql</li>
+                        <li>redux</li>
+                        <li>redux toolkit</li>
+                        <li>CSS Styled Components</li>
+                        <li>Material UI</li>
+                        <li>JWT token</li>
+                        <li>auth</li>
+                    </ul>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, nostrum consequuntur error suscipit quasi commodi debitis!</p>
+                    <div class="links">
+                        <a href="https://ultraplan2.com/" target="_blank">visit site<i class="fa-solid fa-earth-americas"></i></a>
+                        <a href="https://github.com/MiguelMateo1/ultra-plan-v2" target="_blank">view code<i class="fa-brands fa-github icon"></i></a>
+                    </div>
+                </div>
+                <div class="project-img-container">
+                    <img class="img project-img" src="images/project/ultra-plan.png">
+                </div>
+            </article>
+
+            <!-- project 2 -->
+            <article class="project-container">
+                <div class="project-info">
+                    <div class="logo logo-2">
+                        <img class="img" src="images/project/logo/card-logo.png">
+                    </div>
+                    <h2 class="title">Card Match</h2>
+                    <ul class="tags">
+                        <li>html</li>
+                        <li>javaScript</li>
+                        <li>react.js</li>
+                        <li>parallax</li>
+                        <li>CSS</li>
+                    </ul>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, nostrum consequuntur error suscipit quasi commodi debitis!</p>
+                    <div class="links">
+                        <a href="https://card-match-miguel.netlify.app/" target="_blank">visit site<i class="fa-solid fa-earth-americas"></i></a>
+                        <a href="https://github.com/MiguelMateo1/Card-match" target="_blank">view code<i class="fa-brands fa-github icon"></i></a>
+                    </div>
+                </div>
+                <div class="project-img-container">
+                    <img class="img project-img" src="images/project/card-match.png">
+                </div>
+            </article>
+
+            <!-- project 3 -->
+            <article class="project-container">
+                <div class="project-info">
+                    <div class="logo logo-3">
+                        <img class="img" src="images/project/logo/shoe-logo.png">
+                    </div>
+                    <h2 class="title">Store App</h2>
+                    <ul class="tags">
+                        <li>html</li>
+                        <li>javaScript</li>
+                        <li>react.js</li>
+                        <li>CSS</li>
+                        <li>contex api</li>
+                    </ul>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, nostrum consequuntur error suscipit quasi commodi debitis!</p>
+                    <div class="links">
+                        <a href="https://store-app-miguel.netlify.app/" target="_blank">visit site<i class="fa-solid fa-earth-americas"></i></a>
+                        <a href="https://github.com/MiguelMateo1/Store-app" target="_blank">view code<i class="fa-brands fa-github icon"></i></a>
+                    </div>
+                </div>
+                <div class="project-img-container">
+                    <img class="img project-img" src="images/project/shoe-store.png">
+                </div>
+            </article>
+
+        </section>
+        <div class="divider" id="skills"></div>
+
+        <!-- skills srction -->
+        <section class="skills-section">
+            <h2 class="skills-title">skills</h2>
+            <div class="skills-container">
+                <article class="skills-box1">
+                    <div class="skills-box">
+                        <h5>Fontend</h5>
+                        <div class="skills-text">
+                            <h5><i class="fa-brands fa-html5"></i>HTML</h5>
+                            <h5><i class="fa-brands fa-css3-alt"></i>CSS</h5>
+                        </div>
+                        <div class="skills-text">
+                            <h5><i class="fa-brands fa-github"></i>Git</h5>
+                            <h5><i class="fa-brands fa-react"></i>React</h5>
+                        </div>
+                        <div class="skills-text">
+                            <h5><i class="fa-brands fa-square-js"></i>Javascript</h5>
+                            <h5><i class="fa-solid fa-pen"></i>UI/UX</h5>
+                        </div>
+                    </div>
+                </article>
+                <article class="skills-box2">
+                    <div class="skills-box">
+                        <h5>Backend</h5>
+                        <div class="skills-text">
+                            <h5><i class="fa-brands fa-square-js"></i>Javascript</h5>
+                            <h5><i class="fa-brands fa-node-js"></i>Node.js</h5>
+                        </div>
+                        <div class="skills-text">
+                            <h5><i class="fa-brands fa-php"></i>PHP</h5>
+                            <h5><i class="fa-brands fa-laravel"></i>Larravel</h5>
+                        </div>
+                        <div class="skills-text">
+                            <h5><i class="fa-solid fa-database"></i>MySQL</h5>
+                            <h5><i class="fa-brands fa-python"></i>Python</h5>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <!-- certificates -->
+            <section class="certificates">
+                <h2 class="cert-title">Certificates<i class="fa-solid fa-medal"></i></h2>
+                <div class="image-container">
+                    <div class="slider-wrapper">
+                        <img src="images/certs/cs50.png" alt="cs50 certificate" />
+                        <img src="images/certs/meta.png" alt="meta certificate" />
+                        <img src="images/certs/cal-arts.png" alt="cal-arts certificate" />
+                        <img src="images/certs/udemy.jpg" alt="udymy certificate" />
+                    </div>
+                    <button class="cert-btn" id="prevBtn">&#10094;</button>
+                    <button class="cert-btn" id="nextBtn">&#10095;</button>
+                </div>
+            </section>
+        </section>
+        <div class="divider"></div>
+
+
+        <!-- contact section -->
+        <section id="contact">
+                <h3>Contact Details</h3>
+        </section>
+
+        
+    </div>
+    <footer>
+        <div>
+            <span>&copy</span>
+            <img src="/images/footer-name.png" alt="name">
+        </div>
+    </footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
