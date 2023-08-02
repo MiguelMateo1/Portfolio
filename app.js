@@ -1,6 +1,5 @@
-const toTopBtn = document.querySelector(".topBtn");
-
 // shows/hide button to top of page on botton of page
+const toTopBtn = document.querySelector(".topBtn");
 window.addEventListener('scroll', () => {
 
     if (window.scrollY > 350) {
@@ -9,6 +8,20 @@ window.addEventListener('scroll', () => {
         toTopBtn.classList.remove('on');
     }
 })
+// shows/hide button to top of page on botton of page END==
+
+
+// popup text box
+const navIcon = document.querySelector('.nav-icon');
+const popupText = document.querySelector('.popup-text');
+
+navIcon.addEventListener('click', function() {
+  popupText.classList.add('show-popup');
+  setTimeout(() => {
+    popupText.classList.remove('show-popup');
+  }, 1500); // Hide the popup after 1.5 seconds (1500ms)
+});
+// popup text box END==
 
 
 // Functions to switch the active page
@@ -85,6 +98,7 @@ const sliderWrapper = document.querySelector(".slider-wrapper");
 const images = sliderWrapper.querySelectorAll("img");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
+const currentIndexImg = document.querySelector(".current-index");
 let currentIndex = 0;
 let slideInterval;
 
@@ -92,6 +106,8 @@ function showImage(index) {
   const slideWidth = sliderWrapper.offsetWidth;
   const displacement = -index * slideWidth;
   sliderWrapper.style.transform = `translateX(${displacement}px)`;
+
+  currentIndexImg.textContent = `${index + 1}/${images.length}`;
 }
 
 function nextImage() {
