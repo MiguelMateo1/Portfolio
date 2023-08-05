@@ -187,7 +187,6 @@ ul {
   position:fixed;
   align-items: center;
   justify-content: space-between;
-  background-color: #d6d6d6;
   background-color: transparent;
   margin-top: -70px;
   padding: 0 70px;
@@ -265,7 +264,6 @@ ul {
   padding: 12px 0px;
   display: flex;
   align-items: center;
-  background-color: #ebebeb;
   border-radius: 50px;
   overflow: hidden;
   position: relative;
@@ -279,6 +277,7 @@ ul {
   width: 41%;
   height: 72%;
   background-color: #ffffff;
+  box-shadow: var(--shadow-1);
   border-radius: 50px;
   position: absolute;
   top: 8px;
@@ -455,7 +454,7 @@ ul {
 }
 
 .intro, .intro-2 {
-  margin: 9rem auto;
+  margin: 7rem auto;
   max-width: 600px;
   position: relative;
 }
@@ -489,6 +488,9 @@ ul {
   .main-nav {
     padding: 0 30px;
   }
+  .intro, .intro-2 {
+    margin-top: 11rem;
+  }
   .popup-text {
     left: 27px;
   }
@@ -507,7 +509,7 @@ ul {
   flex-direction: column;
   align-items: center;
   align-content: center;
-  padding: 0 20px;
+  padding: 2rem 20px;
 }
 
 .project-container {
@@ -622,6 +624,9 @@ ul {
 }
  /*===== mobile screen*/
  @media (max-width: 850px) {
+  #projects {
+    padding-bottom: 0;
+  }
   .project-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -790,6 +795,9 @@ ul {
 .link-4 {
   left: 301%;
 }
+.link-5 {
+  left: 401%;
+}
 
 .current-index {
   font-size: .8rem;
@@ -916,17 +924,17 @@ input, textarea {
   border-radius: var(--borderRadius);
 }
 
-input[type="submit"] {
+.submit-btn {
   background-color: #449746;
   color: white;
   width: 85%;
-  padding: 12px 0px;
+  height: 35px;
   border: none;
   border-radius: var(--borderRadius);
   cursor: pointer;
   position: absolute;
   left: 50%;
-  bottom: -30px;
+  bottom: -24px;
   transform: translateX(-50%);
 }
 
@@ -943,6 +951,15 @@ input[type="submit"] {
 
 .contact-details a {
   font-size: 1.6rem;
+  /* padding: 4px 6px;
+  border-radius: 5px; */
+  /* background-image: linear-gradient(to right, rgb(117, 117, 117), rgb(20, 20, 20));
+  background-clip: text;
+  -webkit-background-clip: text; /* For Safari/WebKit browsers */
+  /* color: transparent; */
+}
+
+.contact-details a i {
   padding: 4px 6px;
   border-radius: 5px;
   background-image: linear-gradient(to right, rgb(117, 117, 117), rgb(20, 20, 20));
@@ -952,7 +969,7 @@ input[type="submit"] {
   transition: var(--transition)
 }
 
-.contact-details a:hover {
+.contact-details a:hover i {
   /* background-image: linear-gradient(to right, #f06, #9f6); */
   color: #f06;
   outline: 1px solid var(--grey-400);
@@ -977,6 +994,9 @@ input[type="submit"] {
 
   .contact-details h3 {
     font-size: 1.7rem;
+  }
+  .submit-btn {
+    width: 80%;
   }
 }
 
