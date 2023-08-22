@@ -529,10 +529,12 @@ ul {
   align-items: center;
   align-content: center;
   padding: 2rem 20px;
+  margin-top: 150px;
+  margin-bottom: -25px;
 }
 
 .project-container {
-  width: 100%;
+  width: 105%;
   margin-bottom: 5rem;
   display: grid;
   grid-template-columns: 1fr 1.3fr;
@@ -656,6 +658,7 @@ ul {
     padding-bottom: 0;
   }
   .project-container {
+    width: 116%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr min-content;
