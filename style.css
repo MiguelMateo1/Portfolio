@@ -492,7 +492,7 @@ ul {
 .intro-2 h1 {
   font-size: 4rem;
   font-weight: 700;
-  background-image: linear-gradient(to right, #f06, #9f6);
+  background-image: linear-gradient(to right, rgb(255, 31, 31), rgb(161, 255, 114));
   background-clip: text;
   -webkit-background-clip: text; /* For Safari/WebKit browsers */
   color: transparent;
@@ -1028,6 +1028,35 @@ input, textarea {
   }
   .submit-btn {
     width: 80%;
+  }
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-gear {
+  margin-left: 6px;
+  font-size: 22px;
+  animation: rotate 3.5s linear infinite;
+  padding: 40px 0;
+}
+
+.status {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #464545;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
