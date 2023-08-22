@@ -145,7 +145,7 @@ sliderWrapper.addEventListener("mouseleave", () => {
 //  certificats container END====
 
 
-//== fade in anaimation (projects)
+//== fade in animation (projects)
 function fadeInElement(element) {
   element.classList.add('fade-in');
 }
@@ -190,18 +190,29 @@ const bgImgElements = document.querySelectorAll('.bg-img');
 let lastScrollY = window.scrollY;
 const imgWidth = 900;
 const initialOpacity = 0.7;
+let animationFrameId;
 
 function handleScroll() {
   const currentScrollY = window.scrollY;
-
-  bgImgElements.forEach(bgImg => {
-    // Calculate new width and opacity based on scroll
-    const newWidth = imgWidth + currentScrollY;
-    const newOpacity = Math.max(initialOpacity - currentScrollY / 800, 0);
-
-    // Apply new width and opacity to the styles of the current element
-    bgImg.style.width = `${newWidth}px`;
-    bgImg.style.opacity = newOpacity.toFixed(2); // Limit opacity to 2 decimal places
+  
+  // Throttle the function using requestAnimationFrame
+  if (animationFrameId) {
+    cancelAnimationFrame(animationFrameId);
+  }
+  animationFrameId = requestAnimationFrame(() => {
+    const scrollDelta = currentScrollY - lastScrollY;
+    
+    bgImgElements.forEach(bgImg => {
+      const newWidth = imgWidth + currentScrollY;
+      const newOpacity = Math.max(initialOpacity - currentScrollY / 800, 0);
+      
+      // Apply new width and opacity using CSS transitions
+      bgImg.style.transition = 'width 0.3s, opacity 0.3s';
+      bgImg.style.width = `${newWidth}px`;
+      bgImg.style.opacity = newOpacity.toFixed(2);
+    });
+    
+    lastScrollY = currentScrollY;
   });
 }
 
