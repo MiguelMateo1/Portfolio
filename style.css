@@ -829,6 +829,9 @@ ul {
 .link-5 {
   left: 401%;
 }
+.link-6 {
+  left: 501%;
+}
 
 .current-index {
   font-size: .8rem;
@@ -1084,7 +1087,7 @@ footer img{
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--grey-100);
+  scrollbar-color: #a7abaf var(--grey-100);
 }
 
 /* Chrome, Edge and Safari */
