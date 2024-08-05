@@ -11,6 +11,46 @@ window.addEventListener('scroll', () => {
 // shows/hide button to top of page on botton of page END==
 
 
+// paralax functions
+function parallax(e){
+  document.querySelectorAll(".parallax").forEach(function(move){
+
+    var moving_value = move.getAttribute('data-value');
+    var x = (e.clientX * moving_value) / 200;
+    var y = (e.clientY * moving_value) / 200;
+
+    move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+
+  })
+}
+function parallax2(e){
+  const elements = document.querySelectorAll('.parallax2, .parallax3');
+
+  // Apply the transformation to each element based on its class
+  elements.forEach(element => {
+    const moving_value = element.getAttribute('data-value');
+
+    var x = (e.clientX * moving_value) / 200;
+    var y = (e.clientY * moving_value) / 200;
+    
+    if (element.classList.contains('parallax2')) {
+      // Apply transformation for elements with class 'parallax2'
+      element.style.transform = `translateX(${x * moving_value}px) translateY(${y * moving_value}px) rotate(-16deg)`;
+    } else if (element.classList.contains('parallax3')) {
+      // Apply transformation for elements with class 'parallax3'
+      element.style.transform = `translateX(${x * moving_value}px) translateY(${y * moving_value}px) rotate(10deg)`;
+    }
+  });
+}
+
+// social icons + light dark mode text parallx
+document.addEventListener("mousemove", (e) => {
+  parallax(e);
+  parallax2(e);
+});
+// social icons + light dark mode text parallax END==
+
+
 // popup text box
 const navIcon = document.querySelector('.nav-icon');
 const popupText = document.querySelector('.popup-text');
@@ -81,6 +121,8 @@ playBtn.addEventListener("click", function () {
 document.addEventListener('DOMContentLoaded', function () {
   const menuBtn = document.querySelector('.menu-btn');
   const navUl = document.querySelector('.nav-ul');
+  const themeTexts = document.querySelectorAll('.theme-text');
+  const themeContainer = document.querySelector('.theme-container');
 
   function toggleMenu() {
     menuBtn.classList.toggle('active');
@@ -89,7 +131,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
   menuBtn.addEventListener('click', toggleMenu);
   navUl.addEventListener('click', toggleMenu)
+
+// light/dark mode logic
+  themeTexts.forEach(text => {
+    text.addEventListener('click', () => {
+      const theme = text.getAttribute('data-theme');
+      setTheme(theme);
+    });
+  });
+
+  function setTheme(theme) {
+    themeContainer.classList.remove('selected-light', 'selected-dark');
+    
+    
+    if (theme === 'light') {
+      themeContainer.classList.add('selected-light');
+      document.body.classList.remove('dark-theme');
+    } else if (theme === 'dark') {
+      document.body.classList.add('dark-theme');
+      themeContainer.classList.add('selected-dark');
+    }
+  }
 });
+// light/dark mode logic END===
 // nav links toggle END===
 
   
