@@ -38,12 +38,28 @@ html {
   --bodyFont: "Nunito", sans-serif;
   /* rest of the vars */
   --backgroundColor: var(--grey-100);
+  --boxBackgroundColor: var(--grey-200);
+  --boxTextColor: var(--grey-500);
+  --textColorP: var(--grey-600);
   --textColor: var(--grey-400);
+  --textColor2: var(--grey-300);
   --borderRadius: 1.2rem;
   --letterSpacing: 1px;
   --transition: 0.2s ease-in-out all;
   --max-width: 1200px;
   --fixed-width: 600px;
+  --gradient1: linear-gradient(to right, rgb(117, 117, 117), rgb(20, 20, 20));
+  --gradient2: linear-gradient(to right, rgb(115, 148, 169), rgb(255, 255, 255));
+  --gradient-title1: linear-gradient(to right bottom, #afafaf, #8d8d8d, #6d6d6d, #4e4e4e, #313131);
+  --gradient-title2: linear-gradient(to right bottom, rgb(255, 255, 255), rgb(185, 210, 225), rgb(158, 202, 230), rgb(33, 118, 170));
+  --menuBg: var(--white);
+  --gradient: var(--gradient1);
+  --gradient-title: var(--gradient-title1);
+  --box-shodow-color: #00000015;
+  --square-color1: #bec8d3;
+  --square-color2: var(--grey-400);
+  --square-color3: var(--grey-500);
+  
 
   /* box shadow*/
   --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
@@ -51,8 +67,33 @@ html {
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-3-2: 0 10px 18px -4px rgba(255, 255, 255, 0.02),
+    0 4px 6px -2px rgba(255, 255, 255, 0.01);
   --shadow-4: 0 25px 30px -2px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  --elementShadow: var(--shadow-3);
+  transition: var(--transition);
+}
+
+
+/* Dark Theme */
+.dark-theme {
+  --backgroundColor: #0e0e0f;
+  --textColor: var(--grey-200);
+  --textColor2: var(--grey-800);
+  --textColorP: var(--grey-400);
+  --square-color1: var(--grey-400);
+  --square-color2: var(--grey-500);
+  --square-color3: var(--grey-200);
+  --gradient: var(--gradient2);
+  --gradient-title: var(--gradient-title2);
+  --menuBg: rgb(26, 26, 26);
+  --menuBg: var(--grey-900);
+  --elementShadow: var(--shadow-3-2);
+  --boxBackgroundColor: var(--grey-900);
+  --boxTextColor: var(--grey-100);
+  --box-shodow-color: #72727233;
 }
 
 body {
@@ -63,6 +104,7 @@ body {
   color: var(--textColor);
   display: grid;
   place-items: center;
+  overflow-x: hidden;
 }
 
 .page {
@@ -219,8 +261,8 @@ ul {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  box-shadow: var(--shadow-3);
-  background-color: #fff;
+  box-shadow: var(--elementShadow);
+  background-color: var(--menuBg);
   overflow: hidden;
   position: relative;
 }
@@ -284,13 +326,13 @@ ul {
   cursor: pointer;
   transition: all 0.3s ease;
   background-color: var(--backgroundColor);
-  box-shadow: var(--shadow-3);
+  box-shadow: var(--elementShadow);
 }
 
 .toggle-slider {
   width: 41%;
   height: 72%;
-  background-color: #ffffff;
+  background-color: var(--menuBg);
   box-shadow: var(--shadow-1);
   border-radius: 50px;
   position: absolute;
@@ -324,7 +366,6 @@ ul {
   font-size: 1.1rem;
   color: var(--textColor);
   font-weight: 600;
-  background-color: #ebebeb;
   background-color: transparent;
   z-index: 3;
   transition: var(--transition);
@@ -339,7 +380,7 @@ ul {
 }
 
 .work.active {
-  background-image: linear-gradient(to right bottom, #8f8e8e, #727171, #686767, #3b3b3b, #242424);
+  background-image: var(--gradient-title);
   background-clip: text;
   -webkit-background-clip: text; /* For Safari/WebKit browsers */
   color: transparent;
@@ -368,9 +409,9 @@ ul {
 .menu-btn {
   width: 50px;
   height: 50px;
-  box-shadow: var(--shadow-3);
+  box-shadow: var(--elementShadow);
   border-radius: 50%;
-  background-color: #fff;
+  background-color: var(--menuBg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -380,7 +421,7 @@ ul {
 .line {
   width: 24px;
   height: 2px;
-  background-color: var(--grey-400);
+  background-color: var(--textColor);
   margin: 4px;
   transition: all 0.3s ease;
 }
@@ -392,20 +433,20 @@ ul {
   right: 0%;
   width: 220px;
   border-radius: 25px;
-  background-color: var(--white);
+  background-color: var(--menuBg);
   text-align: left;
   list-style: none;
   padding: 15px;
   transform-origin: top right;
   transform: scale(0);
   transition: all 0.3s ease;
-  box-shadow: var(--shadow-3);
+  box-shadow: var(--elementShadow);
 }
 
 .nav-ul i {
-  color: var(--grey-300);
+  color: var(--textColor2);
   margin-right: 15px;
-  background-image: linear-gradient(to right, rgb(216, 216, 216), rgb(136, 136, 136));
+  background-image: var(--gradient);
   background-clip: text;
   -webkit-background-clip: text; /* For Safari/WebKit browsers */
   color: transparent;
@@ -419,7 +460,7 @@ ul {
 .nav-link {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--grey-400);
+  color: var(--textColor);
   border-radius: 25px;
   text-decoration: none;
   padding: 7px 12px;
@@ -427,7 +468,7 @@ ul {
 }
 
 .nav-link:hover {
-  background-color: var(--grey-100);
+  background-color: var(--backgroundColor);
 }
 
 /* Style the 'x' icon when the menu is active */
@@ -477,10 +518,126 @@ ul {
 .intro h1 {
   font-size: 4rem;
   font-weight: 700;
-  background-image: linear-gradient(to right bottom, #afafaf, #8d8d8d, #6d6d6d, #4e4e4e, #313131);
+  background-image: var(--gradient-title);
   background-clip: text;
   -webkit-background-clip: text; /* For Safari/WebKit browsers */
   color: transparent;
+}
+
+.intro h5 {
+  color: var(--square-color2);
+}
+
+/* /* .social-icons-container {
+  position: absolute;
+  left: 5%;
+  top: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+} */
+
+/* .social-icons-container i {
+  color: var(--grey-400);
+  font-size: 2rem;
+} */ 
+
+/*                                                   theme btn container */
+.theme-container {
+  position: fixed;
+  right: -50px;
+  top: 30%;
+  transform-origin: top right;
+  z-index: 10;
+}
+
+.theme-line1, .theme-line2 {
+  position: relative;
+  width: 170px; 
+  height: 1px;
+  background-color: var(--square-color1);
+  transition: all 200ms ease;
+  opacity: .9;
+}
+
+.theme-line1:hover, 
+.theme-line2:hover {
+  height: 2px;
+  background-color: var(--square-color2);
+}
+
+/* Ensure h4 text color changes */
+.theme-line1:hover h4, 
+.theme-line2:hover h4 {
+  color: var(--square-color2);
+}
+
+.theme-line1 {
+  transform: rotate(16deg);
+  margin-bottom: 120px;
+}
+
+.theme-line2 {
+  transform: rotate(-10deg);
+}
+
+.theme-text {
+  cursor: pointer;
+  font-size: 1.2rem;
+  position: absolute;
+  margin: 0;
+  color: var(--square-color1);
+}
+
+.theme-line2 h4 {
+  left: -123px;
+  top: -30px;
+  transform: rotate(10deg); 
+}
+
+.theme-line1 h4 {
+  top: -25px;
+  left: -129px;
+  transform: rotate(-16deg); 
+}
+
+.theme-line1::after, .theme-line2::after {
+  content: '';
+  position: absolute;
+  width: 5px; 
+  height: 5px; 
+  background-color: var(--square-color1);
+  top: -2px; 
+  left: -4px; 
+  transform: rotate(deg);
+  transition: all 200ms ease;
+}
+
+/* Change the square color on hover */
+.theme-line1:hover::after, 
+.theme-line2:hover::after {
+  background-color: var(--square-color2)
+}
+
+.theme-container.selected-light .theme-line1,
+.theme-container.selected-light .theme-line1::after {
+  background-color: var(--grey-500); 
+}
+
+.theme-container.selected-light .theme-line1 h4 {
+  color: var(--square-color3);
+  font-weight: 600;
+}
+
+.theme-container.selected-dark .theme-line2,
+.theme-container.selected-dark .theme-line2::after {
+  background-color: var(--square-color3);
+}
+
+.theme-container.selected-dark .theme-line2 h4
+ {
+  color: var(--square-color3);
+  font-weight: 600;
 }
 
 .fa-map-pin {
@@ -523,13 +680,14 @@ ul {
                       /* ===========intro section END========= */
 
                       /* ===========project section========= */
-#projects {
+#projects, #projects2{
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
   padding: 2rem 20px;
-  margin-top: 150px;
+  /* margin-top: 150px; */
+  margin-top: 170px;
   margin-bottom: -25px;
 }
 
@@ -539,7 +697,7 @@ ul {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
   border-radius: var(--borderRadius);
-  background-color: var(--grey-200);
+  background-color: var(--boxBackgroundColor);
   opacity: 0;
   transform: translateX(-20px); 
   transition: opacity 1.1s, transform 1.1s, background-color .2s, box-shodow .2s, scale .2s;
@@ -554,7 +712,7 @@ ul {
 
 .project-container:hover {
   background-color: var(--backgroundColor);
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--elementShadow);
   scale: 1.01;
 }
 
@@ -587,7 +745,7 @@ ul {
   margin: 0;
   margin-bottom: 5px;
   font-weight: 600;
-  background-image: linear-gradient(to right, rgb(117, 117, 117), rgb(20, 20, 20));
+  background-image: var(--gradient);
   background-clip: text;
   -webkit-background-clip: text; /* For Safari/WebKit browsers */
   color: transparent;
@@ -608,7 +766,7 @@ ul {
   border-radius: 4px;
   text-transform: capitalize;
   color: var(--grey-500);
-  background-color: var(--grey-300);
+  background-color: var(--textColor2);
   white-space: nowrap;
 }
 
@@ -627,7 +785,7 @@ ul {
   padding: 6px 15px;
   border-radius: 10px;
   color: rgb(109, 165, 190);
-  background-color: var(--grey-100);
+  background-color: var(--backgroundColor);
   transition: var(--transition);
 }
 
@@ -643,7 +801,7 @@ ul {
 }
 
 .project-img-container {
-  padding-right: 10px;
+  padding-right: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -736,16 +894,16 @@ ul {
   flex-direction: column;
   justify-content: space-around;
   padding: 30px;
-  color: var(--grey-800);
+  color: var(--boxTextColor);
   margin: 0 auto;
   margin-bottom: 2rem;
   height: 17.5rem;
   max-width: 450px;
-  background-color:var(--grey-100);
-  box-shadow: -6px 12px 17px -2px rgba(0,0,0,0.2);
+  background-color:var(--backgroundColor);
+  box-shadow: 6px 7px 17px -2px var(--box-shodow-color);
   border-radius: 1.2rem;
-  border-left: 6px solid #bdbdbd;
-  border-top: 2px solid #d7d7d7;
+  /* border-left: 6px solid #bdbdbd; */
+  border-top: 2px solid var(--box-shodow-color);
 }
 
 .skills-box1, .skills-box2 {
@@ -762,13 +920,13 @@ ul {
 }
 
 .skills-text h5 {
-  font-size: .9rem;
+  font-size: .92rem;
   font-weight: 600;
 }
 
 .skills-text i {
   color:var(--grey-400);
-  padding-right: 5px;
+  padding-right: 9px;
   font-size: 1.1rem;
 }
 
@@ -849,7 +1007,7 @@ ul {
 
 .image-container {
   margin: 0 auto;
-  border-radius: 4px;
+  border-radius: 7px;
   overflow: hidden;
   max-width: 650px;
   position: relative;
@@ -949,30 +1107,41 @@ ul {
 }
 label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   font-size: .9rem;
+  text-align: start;
 }
 
 input, textarea {
   width: 100%;
-  padding: 6px;
-  margin-bottom: 8px;
+  padding: 12px 12px;
+  margin-bottom: 10px;
   border: 1px solid var(--grey-300);
-  border-radius: var(--borderRadius);
+  border-radius: 16px;
+}
+
+input:focus, textarea:focus {
+  outline-color: #5aa7d3e0;
 }
 
 .submit-btn {
   background-color: #449746;
+  font-size: 1.2rem;
   color: white;
   width: 85%;
-  height: 35px;
+  /* height: 42px; */
   border: none;
   border-radius: var(--borderRadius);
   cursor: pointer;
   position: absolute;
   left: 50%;
-  bottom: -24px;
+  bottom: -33px;
   transform: translateX(-50%);
+  transition: var(--transition)
+}
+
+.submit-btn:hover {
+  background-color: #59ae5b;
 }
 
 .contact-details {
@@ -982,12 +1151,12 @@ input, textarea {
 }
 
 .contact-details h3 {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   font-size: 1.8rem;
 }
 
 .contact-details a {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   /* padding: 4px 6px;
   border-radius: 5px; */
   /* background-image: linear-gradient(to right, rgb(117, 117, 117), rgb(20, 20, 20));
@@ -997,19 +1166,20 @@ input, textarea {
 }
 
 .contact-details a i {
-  padding: 4px 6px;
+  padding: 6px 8px;
   border-radius: 5px;
-  background-image: linear-gradient(to right, rgb(117, 117, 117), rgb(20, 20, 20));
+  background-image: var(--gradient);
   background-clip: text;
   -webkit-background-clip: text; /* For Safari/WebKit browsers */
   color: transparent;
-  transition: var(--transition)
+  transition: var(--transition);
+  outline: 1px solid transparent;
 }
 
 .contact-details a:hover i {
   /* background-image: linear-gradient(to right, #f06, #9f6); */
   color: #f06;
-  outline: 1px solid var(--grey-400);
+  outline: 1px solid var(--boxBackgroundColor);
 }
 
 /* small screen */
