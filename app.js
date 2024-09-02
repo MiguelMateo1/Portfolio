@@ -86,6 +86,12 @@ function fadeIn(element) {
 }
 
 function switchPage(page) {
+      // Scroll to the top of the page
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Optional: makes the scrolling smooth
+    });
+
     if (page === "work") {
       workBtn.classList.add("active");
       playBtn.classList.remove("active");
