@@ -115,10 +115,14 @@ switchPage("work");
 // Add event listeners to the buttons
 workBtn.addEventListener("click", function () {
   switchPage("work");
+  window.removeEventListener('scroll', UIfadeInOnScroll)
+  window.addEventListener('scroll', fadeInOnScroll);
 });
 
 playBtn.addEventListener("click", function () {
   switchPage("play");
+  window.removeEventListener('scroll', fadeInOnScroll)
+  window.addEventListener('scroll', UIfadeInOnScroll);
 });
 // Function to switch the active page END==========
 
@@ -219,8 +223,13 @@ sliderWrapper.addEventListener("mouseleave", () => {
 function fadeInElement(element) {
   element.classList.add('fade-in');
 }
+// fade out
+function fadeOutElement(element) {
+  element.classList.remove('fade-in');
+}
 
 const projectContainers = document.querySelectorAll('.project-container');
+const UIprojectContainers = document.querySelectorAll('.UI-container');
 
 // display the fisrt ele in projectsContainer on page load
 const observer = new IntersectionObserver(entries => {
@@ -230,6 +239,7 @@ const observer = new IntersectionObserver(entries => {
   }
 });
 observer.observe(projectContainers[0]);
+observer.observe(UIprojectContainers[0]);
 
 
 const isElementInViewport = element => {
@@ -246,6 +256,22 @@ const fadeInOnScroll = () => {
   projectContainers.forEach(projectContainer => {
       if (projectContainer !== projectContainers[0] && isElementInViewport(projectContainer)) {
           fadeInElement(projectContainer);
+      } else {
+        fadeOutElement(projectContainer);
+        observer.observe(projectContainers[0]);
+        observer.observe(UIprojectContainers[0]);
+      }
+  });
+};
+
+const UIfadeInOnScroll = () => {
+  UIprojectContainers.forEach(projectContainer => {
+      if (projectContainer !== UIprojectContainers[0] && isElementInViewport(projectContainer)) {
+          fadeInElement(projectContainer);
+      } else {
+        fadeOutElement(projectContainer);
+        observer.observe(projectContainers[0]);
+        observer.observe(UIprojectContainers[0]);
       }
   });
 };
