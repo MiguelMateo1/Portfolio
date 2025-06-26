@@ -89,7 +89,7 @@ function switchPage(page) {
       // Scroll to the top of the page
       window.scrollTo({
         top: 0,
-        behavior: "smooth" // Optional: makes the scrolling smooth
+        behavior: "smooth"
     });
 
     if (page === "work") {
@@ -109,8 +109,8 @@ function switchPage(page) {
     }
 }
 
-// Initially, display the "work" page content
-switchPage("work");
+// Initially, display the "play" page content
+switchPage("play");
   
 // Add event listeners to the buttons
 workBtn.addEventListener("click", function () {
@@ -231,7 +231,7 @@ function fadeOutElement(element) {
 const projectContainers = document.querySelectorAll('.project-container');
 const UIprojectContainers = document.querySelectorAll('.UI-container');
 
-// display the fisrt ele in projectsContainer on page load
+// display the first ele in projectsContainer on page load
 const observer = new IntersectionObserver(entries => {
   if (entries[0].isIntersecting) {
       fadeInElement(entries[0].target);
@@ -253,31 +253,37 @@ const isElementInViewport = element => {
 
 // adds classlist on scroll
 const fadeInOnScroll = () => {
-  projectContainers.forEach(projectContainer => {
-      if (projectContainer !== projectContainers[0] && isElementInViewport(projectContainer)) {
-          fadeInElement(projectContainer);
-      } else {
-        fadeOutElement(projectContainer);
-        observer.observe(projectContainers[0]);
-        observer.observe(UIprojectContainers[0]);
-      }
+  projectContainers.forEach((projectContainer, index) => {
+    const isFirst = index === 0;
+
+    if (isElementInViewport(projectContainer)) {
+      fadeInElement(projectContainer);
+    } else if (!isFirst) {
+      fadeOutElement(projectContainer);
+    }
   });
 };
+
 
 const UIfadeInOnScroll = () => {
-  UIprojectContainers.forEach(projectContainer => {
-      if (projectContainer !== UIprojectContainers[0] && isElementInViewport(projectContainer)) {
-          fadeInElement(projectContainer);
-      } else {
-        fadeOutElement(projectContainer);
-        observer.observe(projectContainers[0]);
-        observer.observe(UIprojectContainers[0]);
-      }
+  UIprojectContainers.forEach((projectContainer, index) => {
+    const isFirst = index === 0;
+
+    if (isElementInViewport(projectContainer)) {
+      fadeInElement(projectContainer);
+    } else if (!isFirst) {
+      fadeOutElement(projectContainer);
+    }
   });
 };
 
+// Run and listen
 window.addEventListener('scroll', fadeInOnScroll);
+window.addEventListener('scroll', UIfadeInOnScroll);
+
+// Trigger once on load
 fadeInOnScroll();
+UIfadeInOnScroll();
 // fade in anaimation END ==
 
 

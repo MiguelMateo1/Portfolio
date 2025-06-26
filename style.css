@@ -354,6 +354,7 @@ ul {
 }
 
 #playBtn {
+  padding-left: 19px;
   margin-left: 14px;
 }
 
@@ -649,10 +650,15 @@ ul {
 .intro-2 h1 {
   font-size: 4rem;
   font-weight: 700;
-  background-image: linear-gradient(to right, rgb(255, 31, 31), rgb(161, 255, 114));
+  background-image: linear-gradient(to right, rgb(111, 114, 127), rgb(139, 160, 223));
+  /* background-image: linear-gradient(to right, rgb(255, 31, 31), rgb(111, 170, 237)); */
   background-clip: text;
   -webkit-background-clip: text; /* For Safari/WebKit browsers */
   color: transparent;
+}
+
+.intro-2 .fa-map-pin {
+  color: rgb(139, 160, 223);
 }
 
  /*===================== mobile screen (for nav/intro section) */
@@ -676,6 +682,10 @@ ul {
   .page-content p {
     font-size: .87rem;
   }
+
+  .theme-container {
+    display: none;
+  }
 }
                       /* ===========intro section END========= */
 
@@ -692,7 +702,7 @@ ul {
 }
 
 .project-container {
-  width: 105%;
+  /* width: 105%; */
   margin-bottom: 5rem;
   display: grid;
   grid-template-columns: 1fr 1.3fr;
@@ -810,13 +820,145 @@ ul {
 .project-img {
   width: 100%;
 }
+
+/* UI projects */
+.UI-container {
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 940px;
+  margin: auto;
+  margin-bottom: 5rem;
+  background-color: var(--boxBackgroundColor);
+  transform: translateX(-20px); 
+  opacity: 0;
+  transition: opacity 1.1s, transform 1.1s, background-color .2s, box-shodow .2s, scale .2s;
+}
+
+/* Apply the fade-in animation when the 'fade-in' class is added */
+.UI-container.fade-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.UI-container:hover {
+  background-color: var(--backgroundColor);
+  box-shadow: var(--elementShadow);
+  scale: 1.01;
+}
+
+.UI-project-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.UI-title-area {
+  display: grid; 
+  grid-template-columns: 80% 20%;
+  padding: 0 20px 0 20px;
+  text-align: start;
+  flex-grow: 1;
+  z-index: 2;
+}
+
+.UI-title-area h2 {
+  font-size: 2.4rem;
+  font-family: "Sarpanch", sans-serif;
+  font-weight: 500;
+  color: var(--boxTextColor)
+}
+
+
+.UI-links {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column; 
+  gap: 12px;
+}
+
+.UI-links a {
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+  white-space: nowrap;
+  padding: 4px 15px;
+  border-radius: 5px;
+  color: rgb(109, 165, 190);
+  background-color: var(--backgroundColor);
+  transition: var(--transition);
+}
+
+.UI-links a i {
+  margin-left: 6px;
+}
+
+.UI-container:hover .UI-links a {
+  border-radius: 3px;
+  color: var(--white);
+  background-color: rgb(106, 176, 204);
+}
+
+
+.UI-project-img-container {
+  margin-top: -35px;
+}
+
+ /*===================== mobile screen (for nav/intro section) */
+ @media (max-width: 700px) {
+  .page-content {
+    padding: 0px;
+  }
+  .UI-container {
+    width: 100%;
+    /* transform: translateX(-20px);  */
+  }
+
+  .UI-title-area {
+    grid-template-columns: 72% 28%;
+    padding: 0px;
+  }
+
+  .UI-project-img-container {
+    margin-top: -15px;
+  }
+
+  .UI-title-area h2 {
+    font-size: 1.3rem;
+  }
+
+  .UI-links {
+    padding-top: 2px;
+    flex-direction: row;
+    justify-content: end;
+    gap: 1px;
+  }
+
+  .UI-links a {
+    width: 31px;
+    height: 30px;
+    padding: 0px;
+    padding-top: 3px;
+    margin-left: 5px;
+    text-align: start;
+  }
+
+  .UI-links i {
+    font-size: 1.2rem;
+  }
+
+  .UI-links a span {
+    display: none; 
+  }
+}
+/* UI projects END*/
+
  /*===== mobile screen*/
  @media (max-width: 850px) {
   #projects {
     padding-bottom: 0;
   }
   .project-container {
-    width: 116%;
+    /* width: 116%; */
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr min-content;
@@ -833,9 +975,9 @@ ul {
   }
 }
 @media (max-width: 600px) {
-  .project-container {
+  /* .project-container {
     pointer-events: none;
-  }
+  } */
   .links a {
     pointer-events:visible;
   }
@@ -992,6 +1134,9 @@ ul {
 }
 .link-7 {
   left: 601%;
+}
+.link-8 {
+  left: 701%;
 }
 
 .current-index {
@@ -1224,7 +1369,7 @@ input:focus, textarea:focus {
   margin-left: 10px;
   font-size: 16px;
   font-weight: bold;
-  color: #464545;
+  color: var(--textColorP)
 }
 
 @keyframes rotate {
